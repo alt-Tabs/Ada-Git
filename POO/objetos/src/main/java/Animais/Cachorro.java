@@ -1,27 +1,15 @@
 package Animais;
 
-public class Cachorro {
-    private String nome;
-    private String cor;
-    private double altura;
-    private int peso;
-    private boolean akumaNoMi;
-    private String estado;
+public class Cachorro extends Animais{
+    static int total;
 
     public Cachorro(String nome, String cor, double altura, int peso, boolean akumaNoMi, String estado) {
-        this.nome = nome;
-        this.cor = cor;
-        this.altura = altura;
-        this.peso = peso;
-        this.akumaNoMi = akumaNoMi;
-        this.estado = estado;
+        super(nome, cor, altura, peso, akumaNoMi, estado);
     }
-    public Cachorro(){}; 
     
     public String getNome(){
         return this.nome;
     }
-    public void comer(){}
     
     public void latir(){
         System.out.println("Mestre ODENNN");
@@ -31,12 +19,7 @@ public class Cachorro {
         return "Espada";
     }
     
-    public boolean possuiAkumaNoMi (String acao){
-        if(acao.equals("sim")){
-            this.setAkumaNoMi(true);
-        }
-        return isAkumaNoMi();
-    }
+
     
     public String atacar(String origemInimigo){
         switch(origemInimigo){
@@ -129,4 +112,21 @@ public class Cachorro {
     public void setEstado(String estado) {
         this.estado = estado;
     }
+
+    public static int getTotal() {
+        return total;
+    }
+
+    public static void setTotal(int total) {
+        Cachorro.total = total;
+    }
+    
+    
+
+    @Override
+    public String toString() {
+        return "Cachorro{" + "nome=" + nome + ", cor=" + cor + ", altura=" + altura + ", peso=" + peso + ", akumaNoMi=" + akumaNoMi + ", estado=" + estado + '}';
+    }
+    
+    
 }
